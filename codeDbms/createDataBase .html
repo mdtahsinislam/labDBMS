@@ -1,0 +1,71 @@
+<!-- Create DataBase code  -->
+CREATE DATABASE Data;<!-- Data nam er database create hoba -->
+
+
+  <!-- Table create -->
+CREATE TABLE Employee (
+    `E-id` INT PRIMARY KEY, -- Assuming E-id is the primary key and an integer
+    `E-name` VARCHAR(255) NOT NULL, -- Assuming E-name is a string and cannot be empty
+    Salary DECIMAL(10, 2),      -- Assuming Salary is a decimal number with up to 10 digits and 2 decimal places
+    `d-id` INT                 -- Assuming d-id is an integer representing a department ID
+);
+
+<!-- -- Insert sample values into the Employee table -->
+INSERT INTO Employee (`E-id`, `E-name`, Salary, `d-id`) VALUES
+(101, 'Alice Smith', 50000.00, 1),
+(102, 'Bob Johnson', 60000.50, 2),
+(103, 'Charlie Brown', 45000.75, 1),
+(104, 'Diana Lee', 70000.00, 3);
+
+<!-- create Depertment Table  -->
+CREATE TABLE Depertment ( `d-id` INT (100), `d-name` VARCHAR(100) );
+
+
+<!-- --INSERT VALUES -->
+
+INSERT INTO depertment (`d-id` ,`d-name`) VALUES
+(1 ,'CSE'),
+(2,'ENGLISH') ,
+(3,'Law'),
+
+(4,'Law'),
+(5,'MBA');
+
+
+<!-- INNER JOIN  -->
+
+SELECT employee.`E-name`, depertment.`d-name` FROM employee INNER JOIN depertment ON employee.`d-id`=depertment.`d-id`;
+
+
+
+////////////*************/////////////
+****Self join*************Self Join https://gemini.google.com/app/fa6ce1cbe6247d4a*****
+
+*********create Table code******
+CREATE TABLE Study (
+    S_id VARCHAR(10),
+    C_id VARCHAR(10),
+    since INT
+);
+
+
+********Insert value****
+INSERT INTO Study (S_id, C_id, since) VALUES
+('S1', 'C1', 2016),
+('S2', 'C2', 2017),
+('S1', 'C2', 2016);
+
+
+
+**********Self join********
+SELECT T1.S_id FROM Study AS T1, Study AS T2 WHERE T1.S_id = T2.S_id AND T1.C_id <> T2.C_id;
+
+
+
+
+
+****Self join Confution******
+উপরের ছবির কোডটি করার জন্য একটি টেবিল তৈরি করতে হবে, যার নাম Study।
+
+সেলফ জয়েন করার জন্য একই টেবিলকে দুইবার উল্লেখ করা হয় (যেমন ছবিতে T1 এবং T2 ব্যবহার করা হয়েছে), কিন্তু এটি দুটি ভিন্ন টেবিল তৈরি করে না। এটি একই টেবিলের দুটি ভিন্ন দৃষ্টিকোণ থেকে ডেটা তুলনা করার একটি উপায়।
+
