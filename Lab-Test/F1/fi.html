@@ -67,20 +67,37 @@ WHERE CITY = 'Khulna';
       <!-- Viewing data -->
 
 **Show full  table  
-
 **Code:
   SELECT *FROM info;
 
 
 **Shows only the ID's  (Shows only ID colums)
-
 **Code:
 SELECT ID FROM info;   
 
-**Shows the information of Abir (name colum er je kono  value er information )
 
+**Shows the information of Abir (name colum er je kono  value er information )
 **Code:
 SELECT* FROM info WHERE NAME = 'Abir';
 
 
-****Ascending,Desending, cluse, Distinct ei gula ai file e add kora lagba
+ <!-- Ascending -->
+**Code:
+SELECT* FROM info ORDER BY NAME;
+
+
+
+  <!-- Desending -->
+**Code:
+SELECT* FROM info ORDER BY NAME DESC;
+
+
+<!-- DISTINCT -->Duplicatea ke shudu eak bar dhakabe
+**Code:
+SELECT DISTINCT CITY FROM info;  (info table name  and CITY colum name)
+
+
+  <!-- Clause -->
+   **Code:
+   SELECT * FROM info WHERE NAME LIKE 'A%' AND CITY = 'Satkania';
+
