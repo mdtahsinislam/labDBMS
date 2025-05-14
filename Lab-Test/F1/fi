@@ -1,0 +1,86 @@
+<!-- #*****Create database*** --> 1
+
+CREATE DATABASE Data;<!-- Data nam er database create hoba -->
+code: CREATE DATABASE LABTEST;
+
+  <!-- Table create -->2
+CREATE TABLE INFO (
+    ID INT,
+    SEC VARCHAR(255),
+    NAME VARCHAR(255),
+    CITY VARCHAR(255),
+    SEMESTER INT
+);
+
+  <!-- value insert -->3
+   INSERT INTO info (ID,SEC,NAME,CITY,SEMESTER) VALUES
+  (1,'A','Abir','Satkania',1),(2,'B','Babor','Khulna',4),(3,'C','Saimon','Mumbi',6);
+
+
+ <!-- value update -->4
+
+ **Syntax:        
+
+ UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+****Example 1: Update the city of the student with ID 1 to 'Chattogram'.
+*Code: 
+UPDATE info
+SET CITY = 'Chattogram'
+WHERE ID = 1;
+
+******Example 2: Update the section and semester for the student with NAME 'Babor'.
+*Code:
+UPDATE info
+SET SEC = 'D', SEMESTER = 5
+WHERE NAME = 'Babor';
+
+
+  <!-- Value DELETE  -->5
+   Syntax:
+   DELETE FROM table_name
+   WHERE condition;
+
+
+
+*****Example 1: Delete the student with ID 3.
+*Code:
+DELETE FROM info
+WHERE ID = 3;
+
+*******Example 2: Delete all students from 'Khulna'.
+DELETE FROM info
+WHERE CITY = 'Khulna';
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Viewing data -->
+
+**Show full  table  
+
+**Code:
+  SELECT *FROM info;
+
+
+**Shows only the ID's  (Shows only ID colums)
+
+**Code:
+SELECT ID FROM info;   
+
+**Shows the information of Abir (name colum er je kono  value er information )
+
+**Code:
+SELECT* FROM info WHERE NAME = 'Abir';
+
+
+****Ascending,Desending, cluse, Distinct ei gula ai file e add kora lagba
