@@ -1,0 +1,41 @@
+   
+
+
+
+<!-- See employee  Table For my note & Database name is LABTEST -->
+   
+
+
+
+
+<!-- Group By --> 
+<!-- insert table value by YouTube --> See labtest databse  eployee table
+**Code:   INSERT INTO `employee` (`Dept`, `Name`, `Salary`) VALUES ('HR', 'Rinku', '20000'), ('HR', 'Tasnim', '10000'), ('ENG', 'Farhan', '120000') , ('Business', 'Hossan', '20000'), ('Eng', 'Rakib', '50000'), ('Business', 'Rana', '20000');
+
+**Group By er Code:
+**Code:
+SELECT Dept, COUNT(*) 
+FROM employee 
+GROUP BY Dept 
+ORDER BY COUNT(*) DESC;
+
+
+
+
+
+
+<!-- Having --> See labtest; emp table 
+
+INSERT INTO `emp` (`emp-id`, `dept`, `Salary`) VALUES 
+('101', 'Eng', '50000'),
+('201', 'HR', '10000'), 
+('301', 'Business', '30000'), 
+('102', 'Business', '20000'), 
+('103', 'ENG', '60000'), 
+('104', 'ENG', '20000'), 
+('302', 'ENG', '15000'), 
+('302', 'BUSINESS', '5000'), 
+('202', 'HR', '20000');
+
+**Code:
+SELECT dept,COUNT(*) FROM emp GROUP BY dept HAVING COUNT(*)>2 ORDER BY COUNT(*);
