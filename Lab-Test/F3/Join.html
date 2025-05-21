@@ -1,0 +1,88 @@
+    <!-- Self Join -->
+
+    
+
+
+    <!-- Inner join,Right,Left -->
+    **Code:
+    SELECT ji.`E-Name`,jii.`D-name` FROM ji Inner JOIN jii on ji.`D-id`=jii.`D-id`;
+    
+
+
+    <!-- Self join -->
+
+    CREATE TABLE self (
+    S_id VARCHAR(10),
+    C_id VARCHAR(10),
+    since INT
+);
+
+
+********Insert value****
+INSERT INTO Study (S_id, C_id, since) VALUES
+('S1', 'C1', 2016),
+('S2', 'C2', 2017),
+('S1', 'C2', 2016);
+
+
+
+<!-- **********Self join******** -->
+**Code:
+SELECT T1.S_id FROM self AS T1, self AS T2 WHERE T1.S_id = T2.S_id AND T1.C_id <> T2.C_id;
+
+
+
+<!-- full join in chat gpt -->
+ -- Simulating FULL JOIN using LEFT JOIN + RIGHT JOIN + UNION SELECT A.id, A.name, B.course FROM TableA A LEFT JOIN TableB B ON A.id = B.id UNION SELECT A.id, A.name, B.course FROM TableA A RIGHT JOIN TableB B ON A.id = B.id LIMIT 0, 25;
+
+
+
+
+ <!-- chat gpt  mam join code -->
+
+ SELECT emp.E_name, dept.d_name
+FROM emp
+LEFT JOIN dept ON emp.d_id = dept.d_id
+
+UNION
+
+SELECT emp.E_name, dept.d_name
+FROM emp
+RIGHT JOIN dept ON emp.d_id = dept.d_id
+
+LIMIT 0, 25;
+
+
+<!-- full join table:  -->
+
+<!-- -- Create the 'dept' table -->
+
+CREATE TABLE dept (
+    d_id VARCHAR(5) PRIMARY KEY,
+    d_name VARCHAR(50)
+);
+
+-- Insert values into the dept table
+INSERT INTO dept (d_id, d_name) VALUES
+('D1', 'IT'),
+('D2', 'HR'),
+('D3', 'Finance'),
+('D4', 'MRKT');
+
+
+<!-- -- Create the emp table -->
+CREATE TABLE emp (
+    E_id VARCHAR(5) PRIMARY KEY,
+    E_name VARCHAR(50),
+    Salary INT,
+    d_id VARCHAR(5)
+);
+
+-- Insert values into the emp table
+INSERT INTO emp (E_id, E_name, Salary, d_id) VALUES
+('E1', 'Abul', 10, 'D1'),
+('E2', 'Rahul', 20, 'D1'),
+('E3', 'Bina', 30, 'D2'),
+('E4', 'Shima', 40, 'D2'),
+('E5', 'Nobita', 50, 'D10'),
+('E6', 'Jiyan', 60, 'D10');

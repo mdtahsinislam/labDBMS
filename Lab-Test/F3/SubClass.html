@@ -1,0 +1,6 @@
+<!-- Sub-QUE -->
+ 1. SELECT MAX(salary) FROM que;
+ 2. SELECT `e-name` FROM que WHERE salary=(SELECT MAX(salary) FROM que);
+ 3. SELECT salary FROM que WHERE salary <> (SELECT MAX(salary)FROM que);
+ 4. SELECT MAX(salary) FROM que WHERE salary <> (SELECT MAX(salary) FROM que) LIMIT 0, 25;
+ 5. SELECT `e-name` FROM que WHERE salary = ( SELECT MAX(salary) FROM que WHERE salary <> ( SELECT MAX(salary) FROM que ) );
